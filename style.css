@@ -1,0 +1,23 @@
+body{
+    font-family: "Teachers", sans-serif;
+    text-align: center;
+    border: solid; 
+    border-radius: 25px;
+    border-width: 20px;
+    padding-top: 290px;
+    padding-bottom: 290px;
+    background-color: lightsteelblue;
+}
+
+.timezone{
+    text-align: center;
+    font-size: 80px;
+}
+
+.time{
+    font-size: 160px;
+}
+
+.date{
+    font-size: 80px;
+}

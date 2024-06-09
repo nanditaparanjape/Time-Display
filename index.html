@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/customParseFormat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/Timezone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="timezone" class="timezone">
+</div>
+
+<div id="time" class="time">
+</div>
+
+<div id="date" class="date"> 
+</div>
+
+<script>
+    dayjs.extend(window.dayjs_plugin_customParseFormat)
+    
+    function updateTime(){
+        
+        const now = dayjs();
+
+        const timezone = document.getElementById("timezone")
+        const time =  document.getElementById("time")
+        const date = document.getElementById("date");
+
+
+       timezone.innerHTML = "America/PST"
+        time.innerHTML = now.format("HH:mm:ss");
+        date.innerHTML = now.format("MM/DD/YYYY");
+    }
+
+    updateTime(); 
+    setInterval(updateTime, 1000);
+</script>
+</body>
+</html>
